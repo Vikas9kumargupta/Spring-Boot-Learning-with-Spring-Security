@@ -1,10 +1,10 @@
-package com.example.securitydemo;
+package com.vikas.JWT_SetUp.Project;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SecuritydemoApplicationTests {
+class JwtSetUpProjectApplicationTests {
 
 	@Test
 	void contextLoads() {

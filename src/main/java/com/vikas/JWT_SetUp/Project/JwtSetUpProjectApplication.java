@@ -1,14 +1,14 @@
-package com.example.securitydemo;
+package com.vikas.JWT_SetUp.Project;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SecurityApplication {
+public class JwtSetUpProjectApplication {
 
 	public static void main(String[] args) {
-		
-		SpringApplication.run(SecurityApplication.class, args);
+
+		SpringApplication.run(JwtSetUpProjectApplication.class, args);
 	}
 
 }
