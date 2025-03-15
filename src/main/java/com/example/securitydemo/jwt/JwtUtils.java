@@ -1,4 +1,4 @@
-package jwt;
+package com.example.securitydemo.jwt;
 
 import java.security.Key;
 import java.util.Date;
@@ -12,9 +12,7 @@ import io.jsonwebtoken.security.Keys;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
@@ -59,13 +57,11 @@ public class JwtUtils {
     private Key key(){
         return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
     }
-
     public boolean validateJwtToken(String authToken){
         try {
             System.out.println("Validate");
             Jwts.parser().verifyWith((SecretKey) key())
                     .build().parseSignedClaims(authToken);
-
             return true;
         }catch (MalformedJwtException e){
             logger.error("Invalid JWT token: {}", e.getMessage());

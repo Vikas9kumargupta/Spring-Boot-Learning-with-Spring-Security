@@ -1,7 +1,7 @@
 package com.example.securitydemo.config;
 
-import jwt.AuthEntryPointJwt;
-import jwt.AuthTokenFilter;
+import com.example.securitydemo.jwt.AuthEntryPointJwt;
+import com.example.securitydemo.jwt.AuthTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,22 +29,16 @@ import javax.sql.DataSource;
 @EnableMethodSecurity
 public class SecurityConfig {
 
-
     @Autowired
     public UserDetailsService userDetailsService;
-
     @Autowired
     DataSource dataSource;
-
     @Autowired
     private AuthEntryPointJwt unauthorizedHandler;
-
     @Bean
     public AuthTokenFilter authenticationJwtTokenFilter(){
         return new AuthTokenFilter();
     }
-
-
     @Bean
     public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((authorizeRequests) -> authorizeRequests.requestMatchers("/h2-console/**").permitAll()
@@ -56,7 +50,6 @@ public class SecurityConfig {
                 .frameOptions(HeadersConfigurer.FrameOptionsConfig::sameOrigin));
         http.csrf(AbstractHttpConfigurer::disable);
         http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
-
         return http.build();
     }
 

@@ -1,8 +1,8 @@
 package com.example.securitydemo.controller;
 
-import jwt.JwtUtils;
-import jwt.LoginRequest;
-import jwt.LoginResponse;
+import com.example.securitydemo.jwt.JwtUtils;
+import com.example.securitydemo.jwt.LoginRequest;
+import com.example.securitydemo.jwt.LoginResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -65,17 +65,12 @@ public class GreetingController {
         }
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
-
         UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-
         String jwtToken = jwtUtils.generateTokenFromUsername(userDetails);
-
         List<String> roles = userDetails.getAuthorities().stream()
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
-
         LoginResponse response = new LoginResponse(userDetails.getUsername(), roles, jwtToken);
-
         return ResponseEntity.ok(response);
     }
 }
