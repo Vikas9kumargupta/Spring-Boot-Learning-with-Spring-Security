@@ -2,6 +2,7 @@ package com.example.securitydemo.config;
 
 import com.example.securitydemo.jwt.AuthEntryPointJwt;
 import com.example.securitydemo.jwt.AuthTokenFilter;
+import com.example.securitydemo.service.impl.MyUserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -29,8 +30,12 @@ import javax.sql.DataSource;
 @EnableMethodSecurity
 public class SecurityConfig {
 
-    @Autowired
-    public UserDetailsService userDetailsService;
+    @Bean
+    public UserDetailsService userDetailsService(){
+        return new MyUserDetailsServiceImpl();
+    }
+
+    UserDetailsService userDetailsService = new MyUserDetailsServiceImpl();
     @Autowired
     DataSource dataSource;
     @Autowired
