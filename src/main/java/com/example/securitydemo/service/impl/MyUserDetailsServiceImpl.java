@@ -1,4 +1,4 @@
-package com.example.securitydemo.service;
+package com.example.securitydemo.service.impl;
 
 import com.example.securitydemo.model.UserPrincipal;
 import com.example.securitydemo.model.Users;
@@ -10,7 +10,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
-public class MyUserDetailsService implements UserDetailsService {
+public class MyUserDetailsServiceImpl implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;

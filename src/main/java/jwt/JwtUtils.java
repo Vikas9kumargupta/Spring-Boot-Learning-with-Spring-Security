@@ -20,10 +20,8 @@ import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 
-
 @Component
 public class JwtUtils {
-
     private static final Logger logger = LoggerFactory.getLogger(JwtUtils.class);
 
     @Value("${spring.app.jwtSecret}")
@@ -61,6 +59,7 @@ public class JwtUtils {
     private Key key(){
         return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
     }
+
     public boolean validateJwtToken(String authToken){
         try {
             System.out.println("Validate");
