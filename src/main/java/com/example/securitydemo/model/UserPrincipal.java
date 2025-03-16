@@ -19,14 +19,8 @@ public class UserPrincipal implements UserDetails {
     public UserPrincipal(Users user){
         this.user = user;
     }
-
-    public Users getUser() {
-        return user;
-    }
-
-    public void setUser(Users user) {
-        this.user = user;
-    }
+    public Users getUser() { return user; }
+    public void setUser(Users user) { this.user = user; }
 
     @Override
     public String getPassword() {
