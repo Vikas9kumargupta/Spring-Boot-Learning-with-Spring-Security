@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Spring Boot Security with JWT
 
 ## 🚀 Overview
@@ -95,42 +94,14 @@ This project is licensed under the **MIT License**.
 ---
 
 ## 👨‍💻 Author
-Developed by **Vikas Kumar Gupta** 🚀
+- Developed by **Vikas Kumar Gupta** 🚀
 
-=======
-Learning Spring Security Using JWT
-=======
+---
 
+## 📞 Contact
+For any queries or contributions, please reach out:
+- 📧 Email: vikasgup074@gmail.com  
+- 🔗 LinkedIn: [Vikas Kumar Gupta](https://www.linkedin.com/in/work-with-vikas/)  
+- 💻 GitHub: [Vikas9kumargupta](https://github.com/Vikas9kumargupta)  
 
-This project is a Spring Boot application that demonstrates how to implement authentication and authorization using Spring Security with JWT (JSON Web Token). It includes user registration, login, and role-based access control.
-
-## Features
-
-User authentication with JWT
-
-Role-based authorization
-
-Secure API endpoints
-
-Token validation and refresh
-
-Spring Security integration
-
-## Technologies Used
-
-**Java 17+** 
-
-**Spring Boot**
-
-**Git/GitHub**
-
-**Spring Security**
-
-**JWT (JSON Web Token)**
-
-**Hibernate & JPA**
-
-**MySQL Database**
-
-**Maven**
->>>>>>> origin/main
+---
